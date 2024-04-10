@@ -111,10 +111,17 @@ public class JobData {
         try {
 
             // Open the CSV file and set up pull out column header info and records
+
+            //READER-allows for an external file to be used
             Reader in = new FileReader(DATA_FILE);
+            //CSV PARSER-analyzes the csv file and formats it for use in java
             CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(in);
+            //LIST- An ordered collection (also known as a sequence).
+            // The user of this interface has precise control over where in the list each element is inserted.
+            // The user can access elements by their integer index (position in the list), and search for elements in the list
             List<CSVRecord> records = parser.getRecords();
             Integer numberOfColumns = records.get(0).size();
+            //Sets the headers from the CSV file
             String[] headers = parser.getHeaderMap().keySet().toArray(new String[numberOfColumns]);
 
             allJobs = new ArrayList<>();

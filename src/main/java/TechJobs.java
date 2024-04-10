@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -10,7 +7,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -112,14 +109,25 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+        //Outer loop gives access to all items in HashMap AND prints the asterisks
+        for (HashMap<String, String> job : someJobs) {
+            System.out.println("\n*****");
+            //Inner loop gives access to each key-value pair AND prints each corresponding pair
+            for (Map.Entry<String, String> jobItem : job.entrySet()) {
+                System.out.println(
+                        jobItem.getKey()
+                        + ": "
+                        + jobItem.getValue()
+                );
+            }
+            System.out.println("*****");
+        }
     }
 }
