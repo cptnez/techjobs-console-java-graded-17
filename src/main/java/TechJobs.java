@@ -117,17 +117,23 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         //Outer loop gives access to all items in HashMap AND prints the asterisks
-        for (HashMap<String, String> job : someJobs) {
-            System.out.println("\n*****");
-            //Inner loop gives access to each key-value pair AND prints each corresponding pair
-            for (Map.Entry<String, String> jobItem : job.entrySet()) {
-                System.out.println(
-                        jobItem.getKey()
-                        + ": "
-                        + jobItem.getValue()
-                );
+        if (someJobs.isEmpty()) {
+            System.out.println("No Results");
+        } else {
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n*****");
+                //Inner loop gives access to each key-value pair AND prints each corresponding pair
+                for (Map.Entry<String, String> jobItem : job.entrySet()) {
+                    {
+                        System.out.println(
+                                jobItem.getKey()
+                                        + ": "
+                                        + jobItem.getValue()
+                        );
+                    }
+                }
+                System.out.println("*****");
             }
-            System.out.println("*****");
         }
     }
 }
