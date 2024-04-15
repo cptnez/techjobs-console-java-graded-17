@@ -100,7 +100,9 @@ public class JobData {
                 for (Map.Entry<String, String> jobItem : job.entrySet()) {
                     {
                         if (jobItem.getValue().contains(value)){
-                            jobs.add(job);
+                            while (!jobs.contains(job)){
+                                jobs.add(job);
+                            }
                         }
                     }
                 }
