@@ -118,7 +118,7 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         //Outer loop gives access to all items in HashMap AND prints the asterisks
         if (someJobs.isEmpty()) {
-            System.out.println("No Results");
+            System.out.print("No Results");
         } else {
             for (HashMap<String, String> job : someJobs) {
                 System.out.println("\n*****");
