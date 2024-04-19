@@ -99,14 +99,13 @@ public class JobData {
             for (HashMap<String, String> job : allJobs) {
                 for (Map.Entry<String, String> jobItem : job.entrySet()) {
                     {
-                        if (jobItem.getValue().toLowerCase().contains(value.toLowerCase())){
-                            while (!jobs.contains(job)){
+                        if (jobItem.getValue().toLowerCase().contains(value.toLowerCase()) && !jobs.contains(job)){
                                 jobs.add(job);
                             }
                         }
                     }
                 }
-            }
+
         return jobs;
     }
 
